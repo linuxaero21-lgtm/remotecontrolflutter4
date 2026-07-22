@@ -27,14 +27,14 @@ jobs:
 
       - name: Install dipendenze
         run: flutter pub get
-        working-directory: .
+        working-directory: remotecontrolflutter4/client
 
       - name: Build APK
         run: flutter build apk --release
-        working-directory: .
+        working-directory: remotecontrolflutter4/client
 
       - name: Carica APK come artefatto
         uses: actions/upload-artifact@v5
         with:
           name: remote-control-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
+          path: remotecontrolflutter4/client/build/app/outputs/flutter-apk/app-release.apk
